@@ -1,9 +1,15 @@
+import kotlinx.html.dom.create
+import kotlinx.html.js.div
 import kotlin.browser.document
 
 fun main(args: Array<String>) {
     val root = document.getElementById("root")
 
-    val div = document.createElement("div")
+    document.create.div {
+
+    }
+
+/*    val div = document.createElement("div")
     val h1 = document.createElement("h1")
     val button = document.createElement("button")
 
@@ -13,6 +19,6 @@ fun main(args: Array<String>) {
 
     div.appendChild(h1)
     div.appendChild(button)
-    root!!.appendChild(div)
+    root!!.appendChild(div)*/
 
 }
