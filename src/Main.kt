@@ -1,13 +1,24 @@
+import kotlinx.html.button
 import kotlinx.html.dom.create
+import kotlinx.html.h1
 import kotlinx.html.js.div
+import kotlinx.html.js.onClickFunction
 import kotlin.browser.document
 
 fun main(args: Array<String>) {
     val root = document.getElementById("root")
 
-    document.create.div {
-
+    val div = document.create.div {
+        h1 {
+            +"Hello World"
+        }
+        button {
+            +"Click Me"
+            onClickFunction = { println("clicked") }
+        }
     }
+
+    root!!.appendChild(div)
 
 /*    val div = document.createElement("div")
     val h1 = document.createElement("h1")
