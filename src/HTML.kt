@@ -1,4 +1,4 @@
-import org.w3c.dom.Node
+import org.w3c.dom.Element
 import org.w3c.dom.events.EventListener
 import kotlin.browser.document
 
@@ -17,14 +17,14 @@ open class Tag(name: String) {
         element.textContent = this
     }
 
-    protected fun<T: Tag> doInit(child: T, init: T.() -> Unit): Node {
+    protected fun<T: Tag> doInit(child: T, init: T.() -> Unit): Element {
         child.init()
         element.appendChild(child.element)
         return element
     }
 }
 
-fun div(init: DIV.() -> Node) = DIV().let(init)
+fun div(init: DIV.() -> Element) = DIV().let(init)
 
 class DIV: Tag("div") {
     fun h1(init: H1.() -> Unit) = doInit<H1>(H1(), init)
